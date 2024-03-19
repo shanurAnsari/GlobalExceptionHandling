@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
 }
 
 @ExceptionHandler({EmployeeAlreadyExistsException.class})
-    public ResponseEntity handleEmployeeAlreadyExistsException(EmployeeAlreadyExistsException exception){
+    public ResponseEntity<Object> handleEmployeeAlreadyExistsException(EmployeeAlreadyExistsException exception){
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(exception.getMessage());
 }
